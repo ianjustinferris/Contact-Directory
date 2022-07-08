@@ -1,4 +1,6 @@
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = () => {
   return {
@@ -11,12 +13,14 @@ module.exports = () => {
 
     // TODO: Add the correct output
     output: {
-      filename: 'bundle.js',
-      path: path.resolve(__dirname, 'dist')
+      filename: '[bundle].js',
+      path: path.resolve(__dirname, 'dist'),
+      clean: true,
 
     },
 
     // TODO: Add the correct plugins
+
     plugins: [
       new HtmlWebpackPlugin({
         template: './index.html',
